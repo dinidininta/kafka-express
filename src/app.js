@@ -24,7 +24,7 @@ const consumeMessages = async () => {
   await consumer.run({
     eachMessage: async ({ message }) => {
       console.log({ value: message.value.toString() })
-      consumedMessages.push({ value: message.value.toString() });
+      consumedMessages.push({ value: JSON.parse(message.value.toString()) });
     }
   });
 };
