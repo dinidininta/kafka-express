@@ -33,3 +33,5 @@ node_modules/
 # OSX
 .DS_Store
 Icon*
+
+package-lock.json
