@@ -8,17 +8,17 @@ export default class BookController {
   constructor(app) {
     this._app = app;
     this._router = express.Router();
+    this._produceSlik = this._produceSlik.bind(this);
   }
 
   registerRoutes() {
     this._app.use('/producer', this._router);
-    this._router.get('/', this._getFeatures);
+    this._router.post('/', this._produceSlik);
   }
 
-  async _getFeatures(req, res) {
-    // const { Book } = this._app.locals.models;
-    // const result = await Book.findAll({ include: SomeFeature });
-    const result = { success: true };
-    return res.json(result);
+  async _produceSlik(req, res) {
+    const { order } = req.body
+    const result = { success: true, order };
+    return res.status(201).json(result);
   }
 }
