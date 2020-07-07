@@ -1,5 +1,5 @@
 import express from 'express';
-import SomeFeature from './SomeFeature';
+import ProducerService from './ProducerService';
 
 /**
  * Representing a controller ..
@@ -8,17 +8,17 @@ export default class BookController {
   constructor(app) {
     this._app = app;
     this._router = express.Router();
-    this._getFeatures = this._getFeatures.bind(this);
   }
 
   registerRoutes() {
-    this._app.use('/plurals', this._router);
+    this._app.use('/producer', this._router);
     this._router.get('/', this._getFeatures);
   }
 
   async _getFeatures(req, res) {
-    const { Book } = this._app.locals.models;
-    const result = await Book.findAll({ include: SomeFeature });
+    // const { Book } = this._app.locals.models;
+    // const result = await Book.findAll({ include: SomeFeature });
+    const result = { success: true };
     return res.json(result);
   }
 }
