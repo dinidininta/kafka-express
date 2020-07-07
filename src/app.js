@@ -6,8 +6,8 @@ import ProducerController from './producer/ProducerController';
 
 const app = express();
 const kafka = new Kafka({
-  clientId: 'express',
-  brokers: ['localhost:9092']
+  clientId: 'kafka-express',
+  brokers: ['appkfksit01.dev.corp.btpn.co.id:9092']
 });
 
 const createServices = kafkaConfig => ({

@@ -17,8 +17,10 @@ export default class BookController {
   }
 
   async _produceSlik(req, res) {
-    const { order } = req.body
-    const result = { success: true, order };
+    const body = req.body
+    const { producerService } = this._app.locals.services;
+    const { message } = await producerService.produceMessage(body);
+    const result = { success: true, message };
     return res.status(201).json(result);
   }
 }
