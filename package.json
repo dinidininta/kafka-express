@@ -22,11 +22,6 @@
     "husky": "^3.0.9",
     "jest": "^24.9.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test -- --passWithNoTests"
-    }
-  },
   "dependencies": {
     "@hapi/joi": "^16.1.7",
     "body-parser": "^1.19.0",
