@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import { Kafka } from 'kafkajs';
 import ProducerService from './producer/ProducerService';
@@ -32,6 +33,7 @@ const registerDependencies = () => {
 registerDependencies();
 
 app.use(bodyParser.json());
+app.use(cors());
 initializeControllers();
 
 export default app;
