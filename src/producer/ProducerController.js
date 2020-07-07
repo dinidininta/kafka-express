@@ -1,10 +1,9 @@
 import express from 'express';
-import ProducerService from './ProducerService';
 
 /**
- * Representing a controller ..
+ * Representing a controller for Producer
  */
-export default class BookController {
+export default class ProducerController {
   constructor(app) {
     this._app = app;
     this._router = express.Router();
