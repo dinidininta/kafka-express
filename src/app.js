@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { Kafka } from 'kafkajs';
-import ConsumerService from './sender/ConsumerService';
-import ConsumerController from './sender/ConsumerController';
+import ConsumerService from './consumer/ConsumerService';
+import ConsumerController from './consumer/ConsumerController';
 import ProducerService from './producer/ProducerService';
 import ProducerController from './producer/ProducerController';
 
