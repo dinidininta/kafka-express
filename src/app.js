@@ -10,7 +10,7 @@ import ProducerController from './producer/ProducerController';
 const app = express();
 const kafka = new Kafka({
   clientId: 'kafka-express',
-  brokers: ['appkfksit01.dev.corp.btpn.co.id:9092']
+  brokers: ['localhost:9092']
 });
 
 const consumer = kafka.consumer({ groupId: 'kafka-express-consumer' });
@@ -18,13 +18,13 @@ const consumer = kafka.consumer({ groupId: 'kafka-express-consumer' });
 const consumedMessages = [];
 const consumeMessages = async () => {
   await consumer.connect();
-  await consumer.subscribe({ topic: 'DLOS_SLIK_RESULT_AGGREGATION', fromBeginning: false });
+  await consumer.subscribe({ topic: 'gosip', fromBeginning: false });
   console.log('subscribed!');
 
   await consumer.run({
     eachMessage: async ({ message }) => {
-      console.log({ value: message.value.toString() })
-      consumedMessages.push({ value: JSON.parse(message.value.toString()) });
+      console.log({ value: message.value.toString() });
+      consumedMessages.push({ value: message.value.toString() });
     }
   });
 };
