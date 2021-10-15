@@ -1,4 +1,4 @@
-# your-app-name
+# kafka-express
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ npm ci
 
 * Starting the Program
 ```
-npm start
+npm run start
 ```
 
 * Running the Tests
