@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { Kafka } from 'kafkajs';
-import SenderService from './sender/SenderService';
-import SenderController from './sender/SenderController';
+import ConsumerService from './sender/ConsumerService';
+import ConsumerController from './sender/ConsumerController';
 import ProducerService from './producer/ProducerService';
 import ProducerController from './producer/ProducerController';
 
@@ -33,12 +33,12 @@ consumeMessages().catch(error => console.error('Error when consuming', error.mes
 
 const createServices = () => ({
   producerService: new ProducerService(kafka),
-  senderService: new SenderService(consumedMessages)
+  consumerService: new ConsumerService(consumedMessages)
 });
 
 const createControllers = () => [
   new ProducerController(app),
-  new SenderController(app)
+  new ConsumerController(app)
 ];
 
 const initializeControllers = () => {

@@ -1,7 +1,7 @@
 /**
  * Represent a service to send message to UI
  */
-export default class SenderService {
+export default class ConsumerService {
   constructor(messages) {
     this._messages = messages
   }
