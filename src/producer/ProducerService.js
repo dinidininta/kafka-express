@@ -9,7 +9,7 @@ export default class ProducerService {
   async produceMessage(message) {
     await this._producer.connect();
     await this._producer.send({
-      topic: 'CBAS_ORDER_SLIK',
+      topic: 'gosip',
       messages: [
         {
           key: '2',

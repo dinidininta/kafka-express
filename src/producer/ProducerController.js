@@ -16,7 +16,7 @@ export default class ProducerController {
   }
 
   async _produceSlik(req, res) {
-    const body = req.body
+    const body = req.body;
     const { producerService } = this._app.locals.services;
     try {
       const { message } = await producerService.produceMessage(body);
